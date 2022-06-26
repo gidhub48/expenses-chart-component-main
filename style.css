@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+
+body {
+    --pad-x: 20px;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    margin: 0;
+    padding: 0 var(--pad-x);
+    background: hsl(27, 66%, 92%);
+    font-family: 'DM Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-weight: 700;
+}
+p {
+    margin: 0;
+    font-weight: 400;
+}
+
+
+.container{
+    --primary-red:hsl(10, 79%, 65%);
+    --primary-cyan:hsl(186, 34%, 60%);
+
+    --color-dark-brown:hsl(25, 47%, 15%);
+    --color-mid-brown:hsl(28, 10%, 53%);
+    --color-cream:hsl(27, 66%, 92%);
+
+    --color-pale-orange: hsl(33, 100%, 98%);
+    display: block;
+    max-width: 600px;
+
+    position: relative;
+    inset: 50%;
+    transform: translate(calc(-50% - var(--pad-x)),calc(-50% - var(--pad-x)));
+}
+
+.container > *{
+    padding: 1.3rem;
+    border-radius: 1rem;
+}
+
+
+.my-balance{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-red);
+    margin-bottom: 1.45rem;
+    color: var(--color-cream);
+}
+.expenses-chart{
+    background-color: var(--color-pale-orange);
+    box-sizing: border-box;
+}
+
+/* .expenses-chart child element */
+.chart{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-top: 4rem;
+}
+.days{
+    position: relative;
+    width: 10%;
+}
+.days > *{
+    transition: all 0.3s;
+}
+.chart > .days > .piece{
+    border-radius: 0.3rem;
+}
+.chart > .days > p{
+    text-align: center;
+    padding: 0.5rem 0 0;
+}
+
+.days:hover .money-show{
+    opacity: 1;
+    
+}
+.days > .piece:hover{
+    opacity: 0.75;
+}
+.money-show{
+    position: absolute;left: 50%;top: -2ch;
+    background-color: var(--color-dark-brown);
+    color: var(--color-pale-orange);
+    padding: 0.4rem;
+    border-radius: 0.4rem;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    opacity: 0;
+}
+
+.expenses-chart p{
+    color: var(--color-mid-brown);
+}
+.expenses-chart :where(h1,h2,h3,h4,h5,h6){
+    color: var(--color-dark-brown);
+}
+.expenses-chart > hr{
+    margin: 1.45rem 0;
+    border: 0;
+    border-top: 3px solid var(--color-cream);
+}
+.total-month{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.from-last-mount{
+    text-align: right;
+}
+
+@media (max-width:650px) {
+    .container{
+        width: 90%;
+    }
+}
